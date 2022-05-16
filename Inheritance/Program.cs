@@ -6,20 +6,27 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
+            var penguin = new Bird();
+            penguin.CanFly = false;
+            penguin.Size = "3 feet";
+            penguin.Color = "black and white";
+            penguin.Breed = "Gentoo";
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
+            var crocodile = new Reptile();
+            crocodile.Age = 30;
+            crocodile.TeethCount = 110;
+            crocodile.Size = "17 feet";
+            crocodile.LifeSpan = "60-70 years";
 
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
+            var myAnimal = new Animal[] { penguin, crocodile };
+            foreach(var animal in myAnimal)
+            {
+                Console.WriteLine($"How many legs does it have? {animal.NumberOfLegs}");
+                Console.WriteLine($"Does it have scales, feathers, or fur?: {animal.ScalesFurFeathers}");
+                Console.WriteLine($"Sound it makes: {animal.Sound}");
+                Console.WriteLine($"Size of animal: {animal.BigSmallMedium}");
+                Console.WriteLine("");
+            }
 
 
 
